@@ -5,6 +5,11 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AdVdBluetooth", "AdVdBluetooth\AdVdBluetooth.vcxproj", "{8EE39395-A9E7-45C5-BEAB-84CEA24E3607}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BluetoothTest", "BluetoothTest\BluetoothTest.vcxproj", "{CCBBB06B-892E-48D1-BCA7-03930BFA852E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8EE39395-A9E7-45C5-BEAB-84CEA24E3607} = {8EE39395-A9E7-45C5-BEAB-84CEA24E3607}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +26,14 @@ Global
 		{8EE39395-A9E7-45C5-BEAB-84CEA24E3607}.Release|x64.Build.0 = Release|x64
 		{8EE39395-A9E7-45C5-BEAB-84CEA24E3607}.Release|x86.ActiveCfg = Release|Win32
 		{8EE39395-A9E7-45C5-BEAB-84CEA24E3607}.Release|x86.Build.0 = Release|Win32
+		{CCBBB06B-892E-48D1-BCA7-03930BFA852E}.Debug|x64.ActiveCfg = Debug|x64
+		{CCBBB06B-892E-48D1-BCA7-03930BFA852E}.Debug|x64.Build.0 = Debug|x64
+		{CCBBB06B-892E-48D1-BCA7-03930BFA852E}.Debug|x86.ActiveCfg = Debug|Win32
+		{CCBBB06B-892E-48D1-BCA7-03930BFA852E}.Debug|x86.Build.0 = Debug|Win32
+		{CCBBB06B-892E-48D1-BCA7-03930BFA852E}.Release|x64.ActiveCfg = Release|x64
+		{CCBBB06B-892E-48D1-BCA7-03930BFA852E}.Release|x64.Build.0 = Release|x64
+		{CCBBB06B-892E-48D1-BCA7-03930BFA852E}.Release|x86.ActiveCfg = Release|Win32
+		{CCBBB06B-892E-48D1-BCA7-03930BFA852E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
