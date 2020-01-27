@@ -892,40 +892,25 @@ BluetoothSocket* BluetoothSocket::Accept() const
 }
 
 
-void BluetoothSocket::Send(const char* buffer, int length) const
+void BluetoothSocket::Send(const char* buffer, int offset, int length) const
 {
 	SOCKET s = (SOCKET)socketHandle;
 
-	int result = send(s, buffer, length, 0);
+	int result = send(s, buffer + offset, length, 0);
 	if (result == SOCKET_ERROR) {
 		throw BluetoothException(L"send() call failed", WSAGetLastError());
 	}
 }
 
-int BluetoothSocket::Receive(char* buffer, int length) const
+int BluetoothSocket::Receive(char* buffer, int offset, int length) const
 {
 	SOCKET s = (SOCKET)socketHandle;
 
-	char* bufferIndex = buffer;
-	int totalReceived = 0;
-	while (totalReceived < length) {
-		int received = recv(s, bufferIndex, length - totalReceived, 0);
-
-		if (received == 0) break;
-
-		if (received == SOCKET_ERROR) {
-			throw BluetoothException(L"recv() call failed", WSAGetLastError());
-		}
-
-		if (received > (length - totalReceived)) {
-			throw BluetoothException(L"Received too much data");
-		}
-
-		bufferIndex += received;
-		totalReceived += received;
+	int received = recv(s, buffer + offset, length, 0);
+	if (received == SOCKET_ERROR) {
+		throw BluetoothException(L"recv() call failed", WSAGetLastError());
 	}
-
-	return totalReceived;
+	return received;
 }
 
 bool BluetoothSocket::IsValid() const

@@ -166,16 +166,16 @@ BluetoothSocket* BluetoothSocket_Accept(const BluetoothSocket* s, ERROR_PARAM)
 	TRY_CATCH_RET(s->Accept(), nullptr);
 }
 
-void BluetoothSocket_Send(const BluetoothSocket* s, const char* buffer, int length, ERROR_PARAM)
+void BluetoothSocket_Send(const BluetoothSocket* s, const char* buffer, uint32_t offset, uint32_t length, ERROR_PARAM)
 {
 	NULL_CHECK(s);
-	TRY_CATCH(s->Send(buffer, length));
+	TRY_CATCH(s->Send(buffer, offset, length));
 }
 
-int BluetoothSocket_Receive(const BluetoothSocket* s, char* buffer, int length, ERROR_PARAM)
+int BluetoothSocket_Receive(const BluetoothSocket* s, char* buffer, uint32_t offset, uint32_t length, ERROR_PARAM)
 {
 	NULL_CHECK_RET(s, -1);
-	TRY_CATCH_RET(s->Receive(buffer, length), -1);
+	TRY_CATCH_RET(s->Receive(buffer, offset, length), -1);
 }
 
 bool BluetoothSocket_IsValid(const BluetoothSocket* s, ERROR_PARAM)

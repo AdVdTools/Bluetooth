@@ -47,8 +47,8 @@ extern "C" BTAPI void BluetoothSocket_Select(const BluetoothSocket** checkRead, 
 extern "C" BTAPI bool BluetoothSocket_Poll(const BluetoothSocket* s, uint32_t microseconds, int selectMode, ERROR_PARAM);
 
 extern "C" BTAPI BluetoothSocket* BluetoothSocket_Accept(const BluetoothSocket* s, ERROR_PARAM);
-extern "C" BTAPI void BluetoothSocket_Send(const BluetoothSocket* s, const char* buffer, int length, ERROR_PARAM);
-extern "C" BTAPI int BluetoothSocket_Receive(const BluetoothSocket* s, char* buffer, int length, ERROR_PARAM);
+extern "C" BTAPI void BluetoothSocket_Send(const BluetoothSocket* s, const char* buffer, uint32_t offset, uint32_t length, ERROR_PARAM);
+extern "C" BTAPI int BluetoothSocket_Receive(const BluetoothSocket* s, char* buffer, uint32_t offset, uint32_t length, ERROR_PARAM);
 extern "C" BTAPI bool BluetoothSocket_IsValid(const BluetoothSocket* s, ERROR_PARAM);
 extern "C" BTAPI void BluetoothSocket_GetAddressAndPort(const BluetoothSocket* s, uint64_t& address, unsigned long& port, ERROR_PARAM);
 extern "C" BTAPI void BluetoothSocket_Close(BluetoothSocket* s, ERROR_PARAM);

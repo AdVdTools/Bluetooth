@@ -180,8 +180,8 @@ public:
 	// The caller is responsible for closing this socket/deleting the pointed data
 	BluetoothSocket* Accept() const;
 
-	void Send(const char* buffer, int length) const;
-	int Receive(char* buffer, int length) const;
+	void Send(const char* buffer, int offset, int length) const;
+	int Receive(char* buffer, int offset, int length) const;
 
 	bool IsValid() const;
 	void GetAddressAndPort(uint64_t& address, unsigned long& port) const;
